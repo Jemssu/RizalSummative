@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M2 Summative</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://placehold.co/32x32/993300/FFFFFF?text=R"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-stone-50 antialiased">
+    <div class="min-h-screen flex flex-col md:flex-row">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="w-full md:w-72 bg-white shadow-xl md:min-h-screen p-6 flex flex-col justify-between"
+      >
+        <div>
+          <div
+            class="text-2xl font-extrabold text-red-900 border-b-2 border-red-200 pb-3 mb-6 flex items-center"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Jose_rizal_01.jpg"
+              alt="Rizal Icon"
+              class="w-12 h-12 inline-block mr-2 rounded-full object-cover"
+            />
+            Rizal Blog
+          </div>
+          <nav id="nav-menu" class="space-y-1">
+            <!-- Nav buttons will be dynamically managed but placed here for structure -->
+            <button
+              data-page="Home"
+              class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5 mr-3"
+              >
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              <span class="font-medium text-left">Home</span>
+            </button>
+            <button
+              data-page="Influences"
+              class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5 mr-3"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+              <span class="font-medium text-left">Influences</span>
+            </button>
+            <button
+              data-page="Timeline"
+              class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5 mr-3"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span class="font-medium text-left">Timeline</span>
+            </button>
+            <button
+              data-page="Character"
+              class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5 mr-3"
+              >
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span class="font-medium text-left">Character Analysis</span>
+            </button>
+            <button
+              data-page="Conclusion"
+              class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5 mr-3"
+              >
+                <path
+                  d="M21 2c.7 0 1 .3 1 1v3c0 .7-.3 1-1 1H3c-.7 0-1-.3-1-1V3c0-.7.3-1 1-1h18z"
+                />
+                <path d="M21 12H3" />
+                <path d="M21 19H3" />
+                <path d="M7 7v5" />
+                <path d="M7 12v5" />
+              </svg>
+              <span class="font-medium text-left">Conclusion</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Footer and Firestore Status -->
+        <div class="mt-8 pt-4 border-t border-red-100 text-xs text-stone-500">
+          <p
+            id="firestore-message"
+            class="font-semibold text-stone-600 mb-1 break-words"
+          >
+            Made by James Tan & Joshua Masellones
+          </p>
+          <p>M2 Summative for Life and Works of Rizal</p>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="flex-1 p-6 md:p-10 overflow-y-auto">
+        <header class="mb-8">
+          <h1
+            class="text-4xl font-extrabold text-stone-900"
+            id="main-title"
+          ></h1>
+          <p class="text-red-700 mt-2 text-xl font-medium">
+            An Interactive Exploration of José Rizal’s Journey and Character
+            Formation.
+          </p>
+        </header>
+
+        <section id="content-view" class="bg-white p-6 rounded-2xl shadow-2xl">
+          <!-- Dynamic content is rendered here -->
+        </section>
+
+        <!-- Fixed Footer for Mobile -->
+        <footer
+          class="md:hidden fixed bottom-0 left-0 right-0 bg-white p-3 border-t shadow-lg text-center text-xs text-stone-500"
+        >
+          <p id="firestore-message-mobile" class="break-words">
+            Made by James Tan & Joshua Masellones
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+      import {
+        getAuth,
+        signInAnonymously,
+        signInWithCustomToken,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        onSnapshot,
+      } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+      const firestoreMessageEl = document.getElementById("firestore-message");
+      const firestoreMessageMobileEl = document.getElementById(
+        "firestore-message-mobile"
+      );
+
+      function updateStatus(message) {
+        firestoreMessageEl.textContent = message;
+        firestoreMessageMobileEl.textContent = message;
+      }
+
+      try {
+        const appId =
+          typeof __app_id !== "undefined" ? __app_id : "default-app-id";
+        const firebaseConfig = JSON.parse(
+          typeof __firebase_config !== "undefined" ? __firebase_config : "{}"
+        );
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // 1. Handle Authentication
+        if (
+          typeof __initial_auth_token !== "undefined" &&
+          __initial_auth_token
+        ) {
+          signInWithCustomToken(auth, __initial_auth_token).then(() =>
+            console.log("Signed in with custom token.")
+          );
+        } else {
+          signInAnonymously(auth).then(() =>
+            console.log("Signed in anonymously.")
+          );
+        }
+
+        // 2. Auth State Listener
+        onAuthStateChanged(auth, (user) => {
+          const currentUserId = user
+            ? user.uid
+            : "anonymous_" + Math.random().toString(36).substring(2, 11);
+          updateStatus(
+            `User ID: ${currentUserId.substring(0, 12)}... | App ID: ${appId}`
+          );
+
+          if (user) {
+            const docRef = doc(
+              db,
+              "artifacts",
+              appId,
+              "public",
+              "data",
+              "timeline_metadata",
+              "status"
+            );
+            onSnapshot(
+              docRef,
+              (docSnap) => {
+                if (docSnap.exists()) {
+                  const statusMsg = docSnap.data().message || "Ready";
+                  updateStatus(
+                    `DB Status: ${statusMsg} | User ID: ${currentUserId.substring(
+                      0,
+                      12
+                    )}...`
+                  );
+                } else {
+                  updateStatus(
+                    `User ID: ${currentUserId.substring(
+                      0,
+                      12
+                    )}... | Status document created.`
+                  );
+                }
+              },
+              (error) => {
+                console.error("Firestore snapshot error:", error);
+                updateStatus(
+                  `Error connecting to DB. User ID: ${currentUserId.substring(
+                    0,
+                    12
+                  )}...`
+                );
+              }
+            );
+          }
+        });
+      } catch (error) {
+      }
+    </script>
+
+    <script>
+      const RIZAL_DATA = {
+        title: "From Calamba to the World",
+        thesis:
+          "José Rizal's unparalleled character and heroism were meticulously shaped by a complex interplay of his inherited polymathic traits and the volatile environmental forces—familial privilege, Jesuit intellectualism, and the suffocating Spanish colonial repression—culminating in his strategic, yet ultimately sacrificial, reformism.",
+        introNarrative: [
+          {
+            title: "More Than a Hero: A Polymath",
+            content:
+              "Dr. José Protacio Rizal Mercado y Alonso Realonda is more than the hero who fought for the country’s independence by writing novels. He was a linguist, genius, poet, novelist, farmer, sculptor, and ophthalmologist. Rizal was a true **jack of all trades**, possessing the intelligence, skills, and character admired by many. He was born on June 19, 1861, in Calamba, Laguna, and was baptized on June 22, 1861.",
+          },
+          {
+            title: "The Illustrado Family",
+            content:
+              "Rizal’s family was one of the most respected *principalia* families in the country. His father, **Francisco Mercado**, was a rich farmer and trader who studied Latin and Philosophy. His mother, **Teodora Alonso**, was an educated woman who excelled as a mathematician, cook, interior decorator, and was incredibly intelligent. It is from this background that Rizal inherited his remarkable intelligence and skills.",
+          },
+          {
+            title: "A Colorful Childhood",
+            content:
+              "Rizal grew up with ten siblings, including his older brother **Paciano**, who inspired him to be a patriot and later became a general in the revolution. Rizal had a deep affection for his sisters; he loved to tease Olimpia, but the death of his younger sister **Concepcion** made him profoundly lonely, a tragedy he never forgot. His mother's teachings, including the famous **Story of the Moth**, and the nightly practice of the **Angelus prayer** helped mold his religious and determined character.",
+          },
+        ],
+        biologicalFactors: [
+          {
+            title: "Diverse Ancestry (Mestizo)",
+            icon: "Zap",
+            details:
+              "Rizal inherited traits from Chinese (frugality, patience, serious nature), Spanish (gallantry, elegance), and Malayan (love for freedom, courage) roots, contributing to his multifaceted personality.",
+          },
+          {
+            title: "Intellectual Precociousness",
+            icon: "BookOpen",
+            details:
+              "Showed exceptional intellect from a young age; learned the alphabet from his mother at **3**, could read and write at 5, and displayed early artistic talents. This innate capacity for learning defined his life's work (Constantino, 1975).",
+          },
+          {
+            title: "Physical Characteristics",
+            icon: "User",
+            details:
+              "Relatively small stature and frail body in childhood, which inspired his uncle, Tio Manuel, to encourage **physical exercise**, emphasizing the crucial balance of mind and body.",
+          },
+        ],
+        environmentalFactors: [
+          {
+            title: "Family Background & Upbringing",
+            details:
+              "Born to a wealthy, educated *principalia* family. His parents, Don Francisco and Doña Teodora, instilled discipline and devotion. The home environment, marked by the **Angelus prayer** and **garden storytelling**, fostered a deep appreciation for nature and spirituality. His mother was his first formal instructor, teaching him the alphabet and encouraging his early poetry.",
+            category: "Family",
+          },
+          {
+            title: "Early Tutors & Biñan Education",
+            details:
+              "Rizal's foundational instruction came from private tutors: Maestros Celestino, Lucas Padua, and **Leon Monroy**. He later excelled in **Biñan under Justiniano Aquino Cruz**, mastering Latin and Spanish, and also learning painting from Juancho (Cruz’s father-in-law). This rigorous, disciplined period set the stage for his advanced studies.",
+            category: "Education",
+          },
+          {
+            title: "UST Experience & Discrimination",
+            details:
+              "While his Jesuit education was liberal, his time at the University of Santo Tomas was marked by oppressive **racial discrimination** against Filipino students and **obsolete teaching methods**. This experience, criticized in *El Filibusterismo* (Chapter 8, 'The Class in Physics'), fueled his nationalist sentiments and spurred his decision to study abroad.",
+            category: "Education",
+          },
+          {
+            title: "Socio-Political Context",
+            details:
+              "The **unjust imprisonment of his mother (1871)** and the execution of the **GOMBURZA** priests in 1872 awakened his patriotism and provided the concrete grievances that drove his reform advocacy against the friars and colonial officials.",
+            category: "Political",
+          },
+        ],
+        timelineEvents: [
+          {
+            year: 1861,
+            event: "Birth in Calamba",
+            description:
+              "Born José Protasio Rizal Mercado y Alonso Realonda (June 19) in the agricultural town of Calamba, Laguna.",
+            category: "Family",
+          },
+          {
+            year: 1871,
+            event: "Mother's Unjust Imprisonment",
+            description:
+              "Doña Teodora was unjustly sent to jail on a false accusation, a direct personal experience of Spanish abuse that deeply affected Rizal that provided a foundation for his later critiques.",
+            category: "Personal/Political",
+          },
+          {
+            year: 1872,
+            event: "GOMBURZA Martyrdom",
+            description:
+              "The execution of the three Filipino priests profoundly influenced the 11-year-old Rizal, to whom his brother Paciano dedicated himself, transforming his life's direction.",
+            category: "Political",
+          },
+          {
+            year: 1877,
+            event: "Ateneo Graduation",
+            description:
+              "Graduated with highest honors (*sobresaliente*) from Ateneo Municipal de Manila, demonstrating his mastery of liberal arts and sciences.",
+            category: "Education",
+          },
+          {
+            year: 1882,
+            event: "Secret Departure to Spain",
+            description:
+              "Left for Madrid secretly using the name **'Jose Mercado'**. His motivation was not only to study medicine but to keenly observe European life, culture, and laws in preparation for liberating his countrymen.",
+            category: "Travel",
+          },
+          {
+            year: 1887,
+            event: "Noli Me Tángere Published",
+            description:
+              "Published his first novel, *Noli Me Tángere*, in Berlin, a scathing exposé on the evils of Spanish colonial rule and the friars. He later dedicated this work to the Philippines.",
+            category: "Writing",
+          },
+          {
+            year: 1888,
+            event: "First Homecoming",
+            description:
+              "Returned to the Philippines (August 1887) to operate on his mother's failing eyesight, serve his countrymen, assess the impact of the *Noli*, and check on Leonor Rivera. He was soon forced to leave due to threats.",
+            category: "Personal",
+          },
+          {
+            year: 1891,
+            event: "El Filibusterismo Published",
+            description:
+              "Published the sequel, *El Filibusterismo*, in Ghent, a darker, more revolutionary novel that reflected his growing frustration with the lack of systemic reform.",
+            category: "Writing",
+          },
+          {
+            year: 1892,
+            event: "Exile to Dapitan (July)",
+            description:
+              "After founding La Liga Filipina, Rizal was arrested upon his return. The direct charge was smuggling the anti-friar leaflet **Pobres Frailes**, leading to his deportation to Dapitan, Mindanao.",
+            category: "Political",
+          },
+          {
+            year: 1896,
+            event: "End of Dapitan Exile / Voyage",
+            description:
+              "His four-year exile ended on July 31 when his request to serve as a military doctor in Cuba was approved. As he left Dapitan, the town band played Chopin's **Funeral March**, its melancholic melody foreshadowing the fate awaiting him.",
+            category: "Life in Dapitan",
+          },
+          {
+            year: 1896,
+            event: "Trial, and Execution (Dec 30)",
+            description:
+              "Tried and convicted of rebellion, sedition, and conspiracy. He married Josephine Bracken at 5:00 AM. His final request to be shot in the front was denied, but he managed to turn just before falling, dying on his back facing the sky.",
+            category: "Political",
+          },
+        ],
+        characterAnalysis: {
+          strengths: [
+            {
+              trait: "Polymathy",
+              episode:
+                "Mastery of 22 languages, and excellence in medicine (ophthalmology), writing, art, and science. Proof: Discovery of rare species and community building in Dapitan.",
+            },
+            {
+              trait: "Strategic Pragmatism",
+              episode:
+                "Advocated for peaceful, systemic reform (Propaganda Movement) and representation in the Cortes, understanding the Philippines was not yet ready for revolution.",
+            },
+            {
+              trait: "Discipline and Diligence",
+              episode:
+                "Rizal adhered to a rigorous daily routine even as a child (wake early, mass, study) and completed multiple specialized degrees in Europe under financial stress.",
+            },
+            {
+              trait: "Visionary Patriotism",
+              episode:
+                "Using his novels to articulate a shared national identity and expose colonial abuses to the world, enduring years of separation and persecution.",
+            },
+          ],
+          weaknesses: [
+            {
+              trait: "Political Naiveté (Initial Pitfall)",
+              episode:
+                "Early reliance on peaceful appeal to Spain, ignoring the warnings of Spanish duplicity, which led to his entrapment and exile on the charge of smuggling the anti-friar leaflet **Pobres Frailes** leaflet.",
+            },
+            {
+              trait: "Emotional Vulnerability",
+              episode:
+                "His deep emotional ties (e.g., to Leonor Rivera) and intense feelings sometimes led to periods of melancholia and reduced productivity, demonstrating his profound humanity.",
+            },
+            {
+              trait: "Self-Doubt/Perfectionism",
+              episode:
+                "Meticulous nature led to delays in completing his novels, indicating moments of self-criticism and hesitation, though ensuring the highest quality of his work.",
+            },
+            {
+              trait: "Conservative Stance",
+              episode:
+                "His opposition to the premature Katipunan revolution (**Manifesto of Dec. 15, 1896**) was viewed by some revolutionaries as overly cautious or passive, preferring education first.",
+            },
+          ],
+        },
+        conclusion: {
+          summary:
+            "The analysis confirms that Rizal's character was a powerful synthesis of inherited genius and harsh environmental exposure. His polymathic abilities were weaponized by the political oppression he and his family faced. His decision to pursue reform over immediate revolution underscored his strategic strength, a calculated path to freedom through intellectual preparation.",
+          legacy:
+            "Rizal’s ultimate sacrifice transformed his reformist ideals into the bedrock of Filipino nationalism. His four years in Dapitan, where he was a doctor, teacher, and community planner, prove that his legacy is the realization that systemic change requires intellectual preparation and moral courage, cementing his place not just as a martyr, but as the architect of the Filipino mind.",
+        },
+      };
+
+      const contentView = document.getElementById("content-view");
+      const mainTitle = document.getElementById("main-title");
+      const navButtons = document.querySelectorAll(".nav-button");
+
+      // Utility to format text with **bold** and *italic*
+      const formatText = (text) => {
+        if (!text || typeof text !== "string") return "";
+        return text
+          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+          .replace(/\*(.*?)\*/g, "<em>$1</em>");
+      };
+
+      const renderHome = (data) => {
+        const narrativeHTML = data.introNarrative
+          .map(
+            (section) => `
+                <div class="p-6 rounded-xl shadow-xl bg-stone-100 border-l-4 border-red-400">
+                    <h3 class="text-2xl font-semibold text-red-800 mb-3">${
+                      section.title
+                    }</h3>
+                    <p class="text-stone-700 leading-relaxed">${formatText(
+                      section.content
+                    )}</p>
+                </div>
+            `
+          )
+          .join("");
+
+        return `
+                <div class="space-y-8">
+                    <h2 class="text-3xl font-extrabold text-red-900 border-b-4 border-red-900 pb-2 mb-8">Introduction</h2>
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx_JkW8i14g1YdCaf1_SQ8a-Gla1PI6zC0aw&s"
+                        alt="Dr. Jose Rizal Portrait Placeholder"
+                        class="w-1/3 float-right ml-6 mb-4 rounded-xl shadow-2xl border-4 border-stone-200 object-cover hidden md:block"
+                    />
+                    ${narrativeHTML}
+                    <div class="p-6 rounded-xl shadow-xl bg-red-100 border-l-4 border-red-900 clear-right">
+                        <h3 class="text-2xl font-semibold text-red-900 mb-3">Thesis Statement</h3>
+                        <p class="text-stone-700 leading-relaxed italic">"${data.thesis}"</p>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold text-stone-800 mb-2">Navigation Guide</h3>
+                        <p class="text-stone-600">Use the sidebar to explore the timeline, analyze the factors that shaped him, and review his character strengths and weaknesses.</p>
+                    </div>
+                </div>`;
+      };
+
+      const renderInfluences = (data) => {
+        const bioHTML = data.biologicalFactors
+          .map(
+            (factor) => `
+                 <div class="p-4 bg-white rounded-lg shadow-inner flex flex-col">
+                    <strong class="text-lg font-semibold text-stone-900 flex items-center mb-2">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-amber-500 mr-2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                         ${factor.title}
+                    </strong>
+                    <p class="text-sm text-stone-600">${formatText(
+                      factor.details
+                    )}</p>
+                </div>
+            `
+          )
+          .join("");
+
+        const envHTML = data.environmentalFactors
+          .map(
+            (factor) => `
+                <div class="p-4 bg-white rounded-lg shadow-sm border-b-2 border-red-500">
+                    <strong class="text-lg font-semibold text-stone-900 block mb-1">${
+                      factor.title
+                    }</strong>
+                    <p class="text-sm text-stone-700 leading-relaxed">${formatText(
+                      factor.details
+                    )}</p>
+                </div>
+            `
+          )
+          .join("");
+
+        return `
+                 <div class="space-y-10">
+                    <h2 class="text-3xl font-extrabold text-red-900 border-b-4 border-red-900 pb-2 mb-8">Factors Shaping Rizal's Character</h2>
+                    <div class="bg-stone-100 p-6 rounded-xl shadow-md border-l-8 border-amber-700">
+                        <h3 class="text-2xl font-bold text-amber-700 mb-4">Biological Factors (Inherited Traits)</h3>
+                        <div class="grid md:grid-cols-3 gap-6">${bioHTML}</div>
+                    </div>
+                    <div class="bg-stone-100 p-6 rounded-xl shadow-md border-l-8 border-red-900">
+                        <h3 class="text-2xl font-bold text-red-900 mb-4">Environmental Factors (External Context)</h3>
+                        <div class="space-y-5">${envHTML}</div>
+                    </div>
+                </div>
+            `;
+      };
+
+    const renderTimeline = (data) => {
+        const categoryStyles = (category) => {
+          switch (category) {
+            case "Education":
+              return {
+                colorClass: "bg-yellow-700",
+                text: "text-yellow-700",
+                image: "EDU",
+              };
+            case "Travel":
+              return {
+                colorClass: "bg-amber-600",
+                text: "text-amber-600",
+                image: "SHIP",
+              };
+            case "Political":
+              return {
+                colorClass: "bg-stone-800",
+                text: "text-stone-800",
+                image: "FLAG",
+              };
+            case "Writing":
+              return {
+                colorClass: "bg-teal-700",
+                text: "text-teal-700",
+                image: "PEN",
+              };
+            case "Life in Dapitan":
+              return {
+                colorClass: "bg-green-800",
+                text: "text-green-800",
+                image: "FARM",
+              };
+            case "Personal/Political":
+              return {
+                colorClass: "bg-amber-700",
+                text: "text-amber-700",
+                image: "JUDGE",
+              };
+            case "Personal":
+              return {
+                colorClass: "bg-blue-700",
+                text: "text-blue-700",
+                image: "HEART",
+              };
+            case "Family":
+            default:
+              return {
+                colorClass: "bg-red-900",
+                text: "text-red-900",
+                image: "HOME",
+              };
+          }
+        };
+        const eventsHTML = data.timelineEvents
+          .map((item) => {
+            const { colorClass, text, image } = categoryStyles(item.category);
+            return `
+                    <div class="mb-10 relative">
+                        <div class="absolute -left-12 -mt-1 w-6 h-6 rounded-full shadow-lg ${colorClass} ring-4 ring-stone-50"></div>
+                        <div class="bg-stone-100 p-6 rounded-xl shadow-xl transition-shadow duration-300 hover:shadow-2xl">
+                            <img
+                                src="https://placehold.co/100x40/993300/FFFFFF?text=${image}"
+                                alt="${item.event} placeholder"
+                                class="float-right ml-4 mb-2 rounded-lg opacity-80"
+                            />
+                            <span class="inline-block text-sm font-semibold px-3 py-1 rounded-full text-white mb-2 ${colorClass}">${
+              item.year
+            }</span>
+                            <h3 class="text-xl font-bold mb-1 ${text}">${
+              item.event
+            }</h3>
+                            <p class="text-sm text-stone-600 mb-3 font-semibold">${
+                              item.category
+                            }</p>
+                            <p class="text-stone-700 leading-relaxed">${formatText(
+                              item.description
+                            )}</p>
+                        </div>
+                    </div>
+                `;
+          })
+          .join("");
+
+        return `
+                 <div class="space-y-12">
+                    <h2 class="text-3xl font-extrabold text-red-900 border-b-4 border-red-900 pb-2 mb-8">Life Experiences and Chronology</h2>
+                    <div class="relative border-l-4 border-red-200 ml-4 pl-8">${eventsHTML}</div>
+                </div>
+            `;
+      };
+
+      const renderCharacter = (data) => {
+        const strengthsHTML = data.characterAnalysis.strengths
+          .map(
+            (s) => `
+                <li class="border-l-4 border-green-500 pl-4 py-2">
+                    <strong class="text-stone-800 block text-lg">${
+                      s.trait
+                    }</strong>
+                    <p class="text-stone-600 text-sm italic">"${formatText(
+                      s.episode
+                    )}"</p>
+                </li>
+            `
+          )
+          .join("");
+        const weaknessesHTML = data.characterAnalysis.weaknesses
+          .map(
+            (w) => `
+                <li class="border-l-4 border-red-500 pl-4 py-2">
+                    <strong class="text-stone-800 block text-lg">${
+                      w.trait
+                    }</strong>
+                    <p class="text-stone-600 text-sm italic">"${formatText(
+                      w.episode
+                    )}"</p>
+                </li>
+            `
+          )
+          .join("");
+
+        return `
+                <div class="space-y-10">
+                    <h2 class="text-3xl font-extrabold text-red-900 border-b-4 border-red-900 pb-2 mb-8">Character Analysis and Heroism</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-stone-100 p-6 rounded-xl shadow-lg border-t-4 border-green-700">
+                            <h3 class="text-2xl font-bold text-green-700 mb-4 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Strengths and Virtues
+                            </h3>
+                            <ul class="space-y-4">${strengthsHTML}</ul>
+                        </div>
+                        <div class="bg-stone-100 p-6 rounded-xl shadow-lg border-t-4 border-red-700">
+                             <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Shortcomings and Pitfalls
+                            </h3>
+                            <ul class="space-y-4">${weaknessesHTML}</ul>
+                        </div>
+                    </div>
+                     <div class="bg-red-50 p-6 rounded-xl shadow-inner mt-8 border-l-4 border-red-900">
+                        <h3 class="text-xl font-bold text-red-900 mb-3">Character Evolution: From Pitfalls to Heroism</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            ${formatText(
+                              "Rizal's greatest **pitfall**—his initial reliance on peaceful appeal to Spain (Political Naiveté)—ultimately fueled his most heroic act: using the written word as a lasting weapon. His **weaknesses** (emotional vulnerability, perfectionism) demonstrate his humanity, which makes his final, calculated sacrifice even more profound. The challenges he faced, particularly the Exile to Dapitan, forced him to transcend politics and become a self-sufficient community builder, solidifying his status as a complete hero."
+                            )}
+                        </p>
+                    </div>
+                </div>
+            `;
+      };
+
+      const renderConclusion = (data) => {
+        return `
+                 <div class="space-y-8">
+                    <h2 class="text-3xl font-extrabold text-red-900 border-b-4 border-red-900 pb-2 mb-8">Conclusion and Legacy</h2>
+                    <div class="bg-red-100 p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-red-900 mb-3">Summary of Findings</h3>
+                        <p class="text-stone-800 leading-relaxed">${data.conclusion.summary}</p>
+                    </div>
+                    <div class="bg-stone-100 p-6 rounded-xl shadow-lg border-l-4 border-red-900">
+                        <h3 class="text-xl font-bold text-stone-800 mb-3">Reflection on Rizal's Legacy</h3>
+                        <p class="text-stone-700 leading-relaxed">${data.conclusion.legacy}</p>
+                        <p class="mt-4 text-sm text-right italic text-stone-500">— A digital tribute to the National Hero.</p>
+                    </div>
+                </div>
+            `;
+      };
+
+      function updateContent(page) {
+        let htmlContent = "";
+        switch (page) {
+          case "Influences":
+            htmlContent = renderInfluences(RIZAL_DATA);
+            break;
+          case "Timeline":
+            htmlContent = renderTimeline(RIZAL_DATA);
+            break;
+          case "Character":
+            htmlContent = renderCharacter(RIZAL_DATA);
+            break;
+          case "Conclusion":
+            htmlContent = renderConclusion(RIZAL_DATA);
+            break;
+          case "Home":
+          default:
+            htmlContent = renderHome(RIZAL_DATA);
+            break;
+        }
+        contentView.innerHTML = htmlContent;
+
+        // Update active state for nav buttons
+        navButtons.forEach((button) => {
+          if (button.dataset.page === page) {
+            button.classList.add(
+            "bg-red-900",
+            "text-white",
+            "shadow-lg",
+            "transform",
+            "scale-[1.02]"
+            );
+            button.classList.remove(
+              "text-stone-700",
+              "hover:bg-red-100",
+              "hover:text-red-900"
+            );
+          } else {
+            button.classList.remove(
+              "bg-red-900",
+              "text-white",
+              "shadow-lg",
+              "transform",
+              "scale-[1.02]"
+            );
+            button.classList.add(
+              "text-stone-700",
+              "hover:bg-red-100",
+              "hover:text-red-900"
+            );
+          }
+        });
+      }
+
+      // Add event listeners to nav buttons
+      navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          updateContent(button.dataset.page);
+        });
+      });
+
+      // Initial render
+      document.addEventListener("DOMContentLoaded", () => {
+        mainTitle.textContent = RIZAL_DATA.title;
+        updateContent("Home");
+      });
+    </script>
+  </body>
+</html>
