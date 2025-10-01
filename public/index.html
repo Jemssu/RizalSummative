@@ -42,7 +42,6 @@
             Rizal Blog
           </div>
           <nav id="nav-menu" class="space-y-1">
-            <!-- Nav buttons will be dynamically managed but placed here for structure -->
             <button
               data-page="Home"
               class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300"
@@ -153,6 +152,28 @@
               </svg>
               <span class="font-medium text-left">Conclusion</span>
             </button>
+            <button
+              data-page="MoreInfo"
+              class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5 mr-3"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
+              </svg>
+              <span class="font-medium text-left">More Info</span>
+            </button>
           </nav>
         </div>
 
@@ -230,7 +251,6 @@
         const db = getFirestore(app);
         const auth = getAuth(app);
 
-        // 1. Handle Authentication
         if (
           typeof __initial_auth_token !== "undefined" &&
           __initial_auth_token
@@ -244,7 +264,6 @@
           );
         }
 
-        // 2. Auth State Listener
         onAuthStateChanged(auth, (user) => {
           const currentUserId = user
             ? user.uid
@@ -498,6 +517,103 @@
           legacy:
             "Rizal's ultimate sacrifice transformed his reformist ideals into the bedrock of Filipino nationalism. His four years in Dapitan, where he was a doctor, teacher, and community planner, prove that his legacy is the realization that systemic change requires intellectual preparation and moral courage, cementing his place not just as a martyr, but as the architect of the Filipino mind. His strategic approach to revolution—preferring the pen over the sword—demonstrated a profound understanding that lasting change comes from transforming consciousness, not merely overthrowing governments. The publication of Noli Me Tángere and El Filibusterismo created a shared national narrative that united Filipinos across regions and classes, giving them a common language to articulate their grievances and aspirations. Even in exile, Rizal remained productive: he built schools, designed water systems, practiced medicine, and conducted scientific research in Dapitan, proving that heroism lies not only in dramatic sacrifice but in consistent service to one's community. His final act—his execution on December 30, 1896—was not a defeat but the culmination of his life's work. By maintaining his dignity, refusing to renounce his principles, and facing death with courage, he provided the ultimate proof that ideas are more powerful than weapons. His martyrdom galvanized the revolution he had opposed as premature, transforming abstract reformist ideals into concrete nationalist fervor. Today, Rizal's legacy endures not merely as historical memory but as a living challenge: that true patriotism demands intellectual rigor, moral courage, and unwavering commitment to the collective good over personal safety.",
         },
+        moreInfo: {
+          familyTreeImage: "https://placehold.co/1200x800/993300/FFFFFF?text=Rizal+Family+Tree+(Replace+with+your+image)",
+          places: [
+            {
+              name: "Calamba, Laguna",
+              description: "Rizal's birthplace and childhood home. The ancestral house has been reconstructed as a national shrine, showcasing the family's comfortable lifestyle and the environment that nurtured his early years.",
+              significance: "Where it all began - the town that shaped his love for nature and family values.",
+              icon: "Home"
+            },
+            {
+              name: "Ateneo de Manila",
+              description: "Where Rizal received his secondary education from the Jesuits (1872-1877). The liberal, humanistic education here opened his mind to Enlightenment ideals and nurtured his intellectual gifts.",
+              significance: "Transformed a bright boy into a scholar and critical thinker.",
+              icon: "GraduationCap"
+            },
+            {
+              name: "University of Santo Tomas",
+              description: "Rizal studied medicine and philosophy here (1877-1882), though he faced discrimination and obsolete teaching methods that fueled his nationalist sentiments.",
+              significance: "Where he witnessed colonial prejudice firsthand and decided to continue studies abroad.",
+              icon: "BookOpen"
+            },
+            {
+              name: "Madrid & European Cities",
+              description: "Rizal traveled extensively through Europe (Spain, France, Germany, Austria, Italy), studying medicine, writing his novels, and engaging with European intellectuals and reformists.",
+              significance: "Where he wrote Noli Me Tángere and El Filibusterismo, observing European progress and culture.",
+              icon: "Plane"
+            },
+            {
+              name: "Dapitan, Zamboanga",
+              description: "Rizal's place of exile (1892-1896) where he established a school, hospital, water system, and conducted scientific research. He lived productively despite imprisonment.",
+              significance: "Demonstrated that heroism is consistent service, not just dramatic sacrifice.",
+              icon: "MapPin"
+            },
+            {
+              name: "Fort Santiago, Manila",
+              description: "Where Rizal was imprisoned before his execution. His cell is now a shrine containing his final letters, manuscripts, and personal belongings.",
+              significance: "His final home, where he wrote 'Mi Último Adiós' (My Last Farewell).",
+              icon: "Castle"
+            },
+            {
+              name: "Luneta (Rizal Park)",
+              description: "The execution site where Rizal was shot on December 30, 1896. Now a national park and memorial, it's the symbolic heart of Filipino nationalism.",
+              significance: "Where Rizal's martyrdom transformed into the spark of Philippine independence.",
+              icon: "Flag"
+            }
+          ],
+          funFacts: [
+            {
+              title: "Master of 22 Languages",
+              description: "Rizal was proficient in 22 languages including Tagalog, Spanish, French, German, English, Italian, Japanese, Chinese, Latin, Greek, Arabic, Sanskrit, Hebrew, Dutch, Catalan, Portuguese, Swedish, Russian, and several Filipino dialects. He learned new languages through immersion and self-study during his travels."
+            },
+            {
+              title: "The Smallest Book in His Library",
+              description: "Rizal owned one of the smallest books in the world - a copy of the Fables of Aesop measuring just 3/4 inch x 1/2 inch. He could read it only with a magnifying glass, demonstrating his appreciation for books of all sizes."
+            },
+            {
+              title: "Discovered Three Animal Species",
+              description: "While in Dapitan, Rizal discovered three species previously unknown to science: Draco rizali (a flying dragon lizard), Apogonia rizali (a beetle), and Rhacophorus rizali (a frog). All were named in his honor by European scientists."
+            },
+            {
+              title: "Expert Swordsman and Martial Artist",
+              description: "Despite his small stature (5'3"), Rizal was skilled in fencing and pistol shooting. He took fencing lessons in Europe and was known for his quick reflexes and precision."
+            },
+            {
+              title: "Invented a Wooden Machine",
+              description: "In Dapitan, Rizal invented a wooden brick-making machine to help in construction projects. He also designed and built a water distribution system for the town using bamboo pipes."
+            },
+            {
+              title: "His 'Mi Último Adiós' Was Hidden",
+              description: "Rizal's final poem 'Mi Último Adiós' was written hours before his execution and hidden inside an alcohol cooking stove (likely inside a small lamp). His family found it later, and it became one of the most famous poems in Philippine literature."
+            },
+            {
+              title: "Ophthalmologist at 26",
+              description: "Rizal completed his studies in ophthalmology in Germany at age 26, specifically to cure his mother's deteriorating eyesight. He successfully performed cataract surgery on her upon returning to the Philippines."
+            },
+            {
+              title: "Sculptor and Artist",
+              description: "Rizal was an accomplished sculptor and painter. His famous sculpture 'The Triumph of Science over Death' was inspired by his work as a doctor. He also made sculptures of his friends and loved ones."
+            },
+            {
+              title: "Won in the Lottery While in Exile",
+              description: "While exiled in Dapitan, Rizal and some friends won 6,200 pesos in the lottery (a substantial sum at the time). He used part of the winnings to purchase land and finance his agricultural and community projects in Dapitan."
+            },
+            {
+              title: "Refused a Blindfold at His Execution",
+              description: "On the morning of his execution, Rizal refused to be blindfolded and requested to face the firing squad directly. His request was denied, but he managed to turn his body at the last moment before falling, symbolically dying facing the sunrise and the sky."
+            },
+            {
+              title: "Had Multiple Romantic Relationships",
+              description: "Rizal had several romantic relationships throughout his life, including Segunda Katigbak (his first love), Leonor Rivera (his greatest love, who inspired 'Maria Clara'), Nellie Boustead, Suzanne Jacoby, and finally Josephine Bracken, whom he married hours before his execution."
+            },
+            {
+              title: "Built His Own School System",
+              description: "In Dapitan, Rizal established a school where he taught children for free. His curriculum included reading, writing, arithmetic, geography, Spanish, English, gymnastics, and practical skills like farming and carpentry."
+            }
+          ]
+        }
       };
 
       const contentView = document.getElementById("content-view");
@@ -804,6 +920,107 @@
             `;
       };
 
+      const renderMoreInfo = (data) => {
+        const placesHTML = data.moreInfo.places.map((place) => `
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow border-l-4 border-red-600">
+            <h4 class="text-xl font-bold text-stone-900 mb-2 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2 text-red-700"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              ${place.name}
+            </h4>
+            <p class="text-stone-700 text-sm leading-relaxed mb-3">${place.description}</p>
+            <p class="text-red-800 text-sm font-semibold italic">${place.significance}</p>
+          </div>
+        `).join("");
+
+        const funFactsHTML = data.moreInfo.funFacts.map((fact, index) => `
+          <div class="bg-gradient-to-br from-amber-50 to-red-50 p-6 rounded-xl shadow-md border-2 border-red-200">
+            <h4 class="text-lg font-bold text-red-900 mb-2 flex items-center">
+              <span class="bg-red-900 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">${index + 1}</span>
+              ${fact.title}
+            </h4>
+            <p class="text-stone-700 text-sm leading-relaxed">${fact.description}</p>
+          </div>
+        `).join("");
+
+        return `
+          <div class="space-y-10">
+            <h2 class="text-3xl font-extrabold text-red-900 border-b-4 border-red-900 pb-2 mb-8">More Information About Rizal</h2>
+            
+            <!-- Family Tree Section -->
+            <div class="bg-stone-100 p-6 rounded-xl shadow-lg border-t-4 border-red-900">
+              <h3 class="text-2xl font-bold text-red-900 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/><path d="M12 14c-4.42 0-8 2.69-8 6v2h16v-2c0-3.31-3.58-6-8-6z"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+                Rizal Family Tree
+              </h3>
+              <p class="text-stone-700 mb-4">José Rizal came from a large, prosperous family. His parents, Francisco Mercado and Teodora Alonso, had eleven children. Below is the Rizal family tree showing his immediate family members.</p>
+              <div class="bg-white p-4 rounded-lg shadow-inner">
+                <img src="${data.moreInfo.familyTreeImage}" alt="Rizal Family Tree" class="w-full rounded-lg shadow-md">
+                <p class="text-xs text-stone-500 mt-2 text-center italic">Replace the placeholder image URL with your actual family tree image</p>
+              </div>
+              <div class="mt-4 grid md:grid-cols-2 gap-4">
+                <div class="bg-red-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-red-900 mb-2">Parents</h4>
+                  <ul class="text-sm text-stone-700 space-y-1">
+                    <li><strong>Francisco Mercado Rizal</strong> - Father, farmer and merchant</li>
+                    <li><strong>Teodora Alonso Realonda</strong> - Mother, educated woman</li>
+                  </ul>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-red-900 mb-2">Siblings (11 children total)</h4>
+                  <ul class="text-sm text-stone-700 space-y-1">
+                    <li>Saturnina, Paciano, Narcisa, Olimpia, Lucia</li>
+                    <li>Maria, <strong>José (Our Hero)</strong>, Concepcion†, Josefa</li>
+                    <li>Trinidad, Soledad</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Places Related to Rizal -->
+            <div class="bg-stone-100 p-6 rounded-xl shadow-lg border-t-4 border-amber-700">
+              <h3 class="text-2xl font-bold text-amber-700 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg>
+                Places Related to Rizal
+              </h3>
+              <p class="text-stone-700 mb-6">Explore the significant locations that shaped Rizal's life, from his birthplace in Calamba to his execution site at Luneta.</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                ${placesHTML}
+              </div>
+            </div>
+
+            <!-- Fun Facts -->
+            <div class="bg-stone-100 p-6 rounded-xl shadow-lg border-t-4 border-teal-700">
+              <h3 class="text-2xl font-bold text-teal-700 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                Other Fun Facts About Rizal
+              </h3>
+              <p class="text-stone-700 mb-6">Discover fascinating and lesser-known facts about the Philippines' national hero that showcase his remarkable versatility and humanity.</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                ${funFactsHTML}
+              </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-red-900">
+              <h3 class="text-xl font-bold text-stone-900 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Want to Learn More?
+              </h3>
+              <div class="space-y-3 text-sm text-stone-700">
+                <p>Visit these resources to deepen your understanding of José Rizal:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                  <li><strong>Rizal Shrine, Calamba</strong> - The reconstructed ancestral home of the Rizal family</li>
+                  <li><strong>Fort Santiago</strong> - Where Rizal spent his final days before execution</li>
+                  <li><strong>Rizal Park (Luneta)</strong> - The site of his martyrdom, now a national memorial</li>
+                  <li><strong>National Library of the Philippines</strong> - Houses Rizal's original manuscripts and letters</li>
+                  <li><strong>Dapitan City Museum</strong> - Showcases Rizal's life during his four-year exile</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      };
+
       function updateContent(page) {
         let htmlContent = "";
         switch (page) {
@@ -818,6 +1035,9 @@
             break;
           case "Conclusion":
             htmlContent = renderConclusion(RIZAL_DATA);
+            break;
+          case "MoreInfo":
+            htmlContent = renderMoreInfo(RIZAL_DATA);
             break;
           case "Home":
           default:
