@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,7 +50,6 @@
             Rizal Blog
           </div>
           <nav id="nav-menu" class="space-y-1">
-            <!-- Nav buttons will be dynamically managed but placed here for structure -->
             <button
               data-page="Home"
               class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300 text-gray-800 hover:bg-red-100 hover:text-red-900"
@@ -160,8 +160,6 @@
               </svg>
               <span class="font-medium text-left">Conclusion</span>
             </button>
-<<<<<<< HEAD
-=======
             <button
               data-page="MoreInfo"
               class="nav-button flex items-center w-full p-3 my-1 rounded-lg transition-all duration-300 text-gray-800 hover:bg-red-100 hover:text-red-900"
@@ -184,7 +182,6 @@
               </svg>
               <span class="font-medium text-left">More Info</span>
             </button>
->>>>>>> c08604d4b65e28e2171da4d22d2a2fe960bae4d7
           </nav>
         </div>
 
@@ -266,7 +263,6 @@
         const db = getFirestore(app);
         const auth = getAuth(app);
 
-        // 1. Handle Authentication
         if (
           typeof __initial_auth_token !== "undefined" &&
           __initial_auth_token
@@ -280,7 +276,6 @@
           );
         }
 
-        // 2. Auth State Listener
         onAuthStateChanged(auth, (user) => {
           const currentUserId = user
             ? user.uid
@@ -535,8 +530,6 @@
           legacy:
             "Rizal's ultimate sacrifice transformed his reformist ideals into the bedrock of Filipino nationalism. His four years in Dapitan, where he was a doctor, teacher, and community planner, prove that his legacy is the realization that systemic change requires intellectual preparation and moral courage, cementing his place not just as a martyr, but as the architect of the Filipino mind. His strategic approach to revolution—preferring the pen over the sword—demonstrated a profound understanding that lasting change comes from transforming consciousness, not merely overthrowing governments. The publication of Noli Me Tángere and El Filibusterismo created a shared national narrative that united Filipinos across regions and classes, giving them a common language to articulate their grievances and aspirations. Even in exile, Rizal remained productive: he built schools, designed water systems, practiced medicine, and conducted scientific research in Dapitan, proving that heroism lies not only in dramatic sacrifice but in consistent service to one's community. His final act—his execution on December 30, 1896—was not a defeat but the culmination of his life's work. By maintaining his dignity, refusing to renounce his principles, and facing death with courage, he provided the ultimate proof that ideas are more powerful than weapons. His martyrdom galvanized the revolution he had opposed as premature, transforming abstract reformist ideals into concrete nationalist fervor. Today, Rizal's legacy endures not merely as historical memory but as a living challenge: that true patriotism demands intellectual rigor, moral courage, and unwavering commitment to the collective good over personal safety.",
         },
-<<<<<<< HEAD
-=======
         moreInfo: {
           familyTreeImage: "https://i.imgur.com/e7XrDXn.png",
           places: [
@@ -634,7 +627,6 @@
             }
           ]
         }
->>>>>>> c08604d4b65e28e2171da4d22d2a2fe960bae4d7
       };
 
       const contentView = document.getElementById("content-view");
@@ -738,6 +730,7 @@
             case "Education":
               return {
                 colorClass: "bg-yellow-700",
+                borderColorClass: "border-yellow-700",
                 text: "text-yellow-700",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>',
               };
@@ -745,35 +738,41 @@
               return {
                 colorClass: "bg-amber-600",
                 text: "text-amber-600",
+                borderColorClass: "border-amber-600",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M12 10v4"/><path d="M12 2v3"/></svg>',
               };
             case "Political":
               return {
                 colorClass: "bg-stone-800",
+                borderColorClass: "border-stone-800",
                 text: "text-stone-800",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>',
               };
             case "Writing":
               return {
                 colorClass: "bg-teal-700",
+                borderColorClass: "border-teal-700",
                 text: "text-teal-700",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></svg>',
               };
             case "Life in Dapitan":
               return {
                 colorClass: "bg-green-800",
+                borderColorClass: "border-green-800",
                 text: "text-green-800",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>',
               };
             case "Personal/Political":
               return {
                 colorClass: "bg-amber-700",
+                borderColorClass: "border-amber-700",
                 text: "text-amber-700",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"/><path d="M3 16.2V21m0 0h4.8M3 21l6-6"/><path d="M21 7.8V3m0 0h-4.8M21 3l-6 6"/><path d="M3 7.8V3m0 0h4.8M3 3l6 6"/></svg>',
               };
             case "Personal":
               return {
                 colorClass: "bg-blue-700",
+                borderColorClass: "border-blue-700",
                 text: "text-blue-700",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
               };
@@ -781,6 +780,7 @@
             default:
               return {
                 colorClass: "bg-red-900",
+                borderColorClass: "border-red-900",
                 text: "text-red-900",
                 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
               };
@@ -788,33 +788,17 @@
         };
         const eventsHTML = data.timelineEvents
           .map((item) => {
-            const { colorClass, text, icon } = categoryStyles(item.category);
+            const { colorClass, borderColorClass, text, icon } = categoryStyles(item.category);
             return `
                     <div class="mb-10 relative">
                         <div class="absolute -left-12 -mt-1 w-10 h-10 rounded-full shadow-lg ${colorClass} ring-4 ring-stone-50 flex items-center justify-center text-white">
                             ${icon}
                         </div>
-<<<<<<< HEAD
-                        <div class="bg-white p-6 rounded-xl shadow-xl transition-shadow duration-300 hover:shadow-2xl border-4 ${colorClass}">
-                            <span class="inline-block text-sm font-semibold px-3 py-1 rounded-full text-white mb-2 ${colorClass}">${
-              item.year
-            }</span>
-                            <h3 class="text-xl font-bold mb-1 ${text}">${
-              item.event
-            }</h3>
-                            <p class="text-sm text-stone-600 mb-3 font-semibold">${
-                              item.category
-                            }</p>
-                            <p class="text-stone-700 leading-relaxed">${formatText(
-                              item.description
-                            )}</p>
-=======
                         <div class="bg-white p-6 rounded-xl shadow-xl transition-shadow duration-300 hover:shadow-2xl border-4 ${borderColorClass}">
                            <span class="inline-block text-sm font-semibold px-3 py-1 rounded-full text-white mb-2 ${colorClass}">${item.year}</span>
 <h3 class="text-xl font-bold mb-1 text-gray-900">${item.event}</h3>
 <p class="text-sm text-gray-700 mb-3 font-semibold">${item.category}</p>
 <p class="text-gray-800 leading-relaxed">${formatText(item.description)}</p>
->>>>>>> c08604d4b65e28e2171da4d22d2a2fe960bae4d7
                         </div>
                     </div>
                 `;
@@ -949,8 +933,6 @@
             `;
       };
 
-<<<<<<< HEAD
-=======
       const renderMoreInfo = (data) => {
         const placesHTML = data.moreInfo.places.map((place) => `
           <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow border-l-4 border-red-600">
@@ -1052,7 +1034,6 @@
         `;
       };
 
->>>>>>> c08604d4b65e28e2171da4d22d2a2fe960bae4d7
       function updateContent(page) {
         let htmlContent = "";
         switch (page) {
@@ -1067,6 +1048,9 @@
             break;
           case "Conclusion":
             htmlContent = renderConclusion(RIZAL_DATA);
+            break;
+          case "MoreInfo":
+            htmlContent = renderMoreInfo(RIZAL_DATA);
             break;
           case "Home":
           default:
