@@ -1087,9 +1087,30 @@
 
       // Initial render
       document.addEventListener("DOMContentLoaded", () => {
-        mainTitle.textContent = RIZAL_DATA.title;
-        updateContent("Home");
+        console.log("DOM loaded, initializing...");
+        try {
+          mainTitle.textContent = RIZAL_DATA.title;
+          updateContent("Home");
+          console.log("Content rendered successfully");
+        } catch (error) {
+          console.error("Error rendering content:", error);
+          contentView.innerHTML = `
+            <div class="p-6 bg-red-100 rounded-lg">
+              <h3 class="text-red-900 font-bold mb-2">Error Loading Content</h3>
+              <p class="text-red-700">Please refresh the page. Error: ${error.message}</p>
+            </div>
+          `;
+        }
       });
+
+      // Fallback: Initialize immediately if DOM already loaded
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+        console.log("DOM already ready, initializing immediately...");
+        setTimeout(() => {
+          mainTitle.textContent = RIZAL_DATA.title;
+          updateContent("Home");
+        }, 100);
+      }
     </script>
   </body>
 </html>
